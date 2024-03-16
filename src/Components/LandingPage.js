@@ -15,7 +15,7 @@ function LandingPage() {
   };
 
   return (
-    <Container style={{ height: '100vh', overflow: 'hidden' }}>
+    <Container style={{ height: '100vh', overflow: 'hidden',}}>
       <Grid container spacing={0} style={{ height: '100%' }}>
         <Grid item xs={6} style={{ height: '100%', position: 'relative', overflow: 'hidden' }}>
           <motion.div

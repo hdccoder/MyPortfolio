@@ -9,7 +9,6 @@ function Home() {
     <>
       <AppHeader />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
         {/* You can add more routes here as needed */}
         <Route path="/bio" element={<Bio />} />
       </Routes>
