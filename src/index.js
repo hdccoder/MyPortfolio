@@ -9,10 +9,10 @@ import Home from './Home';
 const defaultTheme = createTheme({
   palette: {
     mode: 'light',
-    //blue
+    //Blushy Nudes
     primary: {
-      main: '#9ad8eb',
-      light: '#bbe4f2',
+      main: '#f3dfd7',
+      light: '#f5e5df',
       dark: '#66c4e1',
       contrastText: '#3d3d3d',
     },
@@ -50,29 +50,29 @@ const defaultTheme = createTheme({
   },
   typography: {
     fontWeightLight: 200,
-    fontFamily: 'Arial',
+    fontFamily: 'Athelas',
     h1: {
-      fontFamily: 'Courier',
+      fontFamily: 'Athelasr',
       fontWeight: 800,
     },
     h2: {
-      fontFamily: 'Courier',
+      fontFamily: 'Athelasr',
       fontWeight: 800,
     },
     h3: {
-      fontFamily: 'Courier',
+      fontFamily: 'Athelasr',
       fontWeight: 800,
     },
     h4: {
-      fontFamily: 'Courier',
+      fontFamily: 'Athelasr',
       fontWeight: 800,
     },
     h5: {
-      fontFamily: 'Courier',
+      fontFamily: 'Athelasr',
       fontWeight: 800,
     },
     h6: {
-      fontFamily: 'Courier',
+      fontFamily: 'Athelasr',
       fontWeight: 800,
     },
     body1: {
@@ -93,8 +93,7 @@ const App = ()=> {
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline/>
       <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/home" element={<Home />} />
+      <Route path="/*" element={<Home />} />
       </Routes>
     </ThemeProvider>
   );

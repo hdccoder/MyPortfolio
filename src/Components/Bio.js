@@ -13,11 +13,11 @@ const Bio = () => {
  
         <Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }} maxWidth="xl">
               <Typography gutterBottom variant="caption" component="span">
-                <h1> Hello </h1>
+             
               </Typography>
-             HeY Yall
+          
               <Typography variant="body2" color="text.secondary">
-               
+               Hey Yall
               </Typography>
              
         </Container>
@@ -28,4 +28,4 @@ const Bio = () => {
 
 }
 
-export default Bio
+export default Bio;
