@@ -8,10 +8,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   logo: {
-    width: '2.3in', // Set the width to 1.5 inches
-    height: '2in', // Set the height to 1 inch
-    marginTop: '19',
-    marginLeft: '-75',
+    width: '2.5in', // Set the width to 1.5 inches
+    height: '1.9in', // Set the height to 1 inch
+    marginTop: '35',
+    marginLeft: '-71',
   },
   title: {
     flexGrow: 1,
