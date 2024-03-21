@@ -58,7 +58,7 @@ const Portfolio = () => {
             position: 'absolute',
             top: index * spacingFactor + '0px', // Adjust top position for dropping effect
             left: `calc(${index} * (${imageWidth} + ${imageSpacing}))`, // Adjust left position for spacing
-            transition: 'top 0.5s ease-in-out', // Apply transition effect for dropping down
+            transition: 'top 1s ease-in-out ' + (index * 0.5) + 's',// Apply transition effect for dropping down
             opacity: index <= currentImageIndex ? 1 : 0, // Control opacity to hide images that have not yet dropped
           }}
         />
