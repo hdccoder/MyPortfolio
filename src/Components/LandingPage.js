@@ -6,10 +6,13 @@ import { useNavigate } from 'react-router-dom';
 function LandingPage() {
   const [showMainPage, setShowMainPage] = useState(false);
   const navigate = useNavigate();
+ 
 
   const handleButtonClick = () => {
     setShowMainPage(true);
-    navigate('/home');
+    setTimeout(() => {
+      navigate('/home');
+    }, 1000); // Adjust the timeout to match the duration of your animation
   };
 
   return (
@@ -20,6 +23,7 @@ function LandingPage() {
             initial={{ x: 0 }}
             animate={{ x: showMainPage ? '-100%' : 0 }}
             transition={{ duration: 0.5 }}
+            transition={{ duration: 1 }}
             style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
           >
             <img
@@ -34,8 +38,9 @@ function LandingPage() {
             initial={{ x: 0 }}
             animate={{ x: showMainPage ? '100%' : 0 }}
             transition={{ duration: 0.5 }}
+            transition={{ duration: 1 }}
             style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
-          >
+         >
             <img
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               alt="Second Half"
@@ -43,13 +48,14 @@ function LandingPage() {
             />
           </motion.div>
         </Grid>
-        {showMainPage ? null : (
-          <Grid item xs={12} style={{ position: 'absolute', top: '75%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 100 }}>
-            <Button onClick={handleButtonClick} variant="contained" style={{ backgroundColor: '#f3dfd7', color: 'black' }}>
-              Click to Reveal Home
-            </Button>
-          </Grid>
-        )}
+            {!showMainPage && (
+              <Grid item xs={12} style={{ position: 'absolute', top: '75%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 100 }}>
+                <Button onClick={handleButtonClick} variant="contained" style={{ backgroundColor: '#f3dfd7', color: 'black' }}>
+                  Click to Reveal Home
+                  Click to Reveal Main Page
+                </Button>
+              </Grid>
+            )}
       </Grid>
     </Container>
   );
