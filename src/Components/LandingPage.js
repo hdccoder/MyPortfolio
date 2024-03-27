@@ -1,76 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@mui/styles';
-import Slide from '@mui/material/Slide';
+import React, { useState } from 'react';
+import { Container, Grid, Button } from '@mui/material';
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    height: '1500px',
-    position: 'relative',
-    marginTop: '1px',
-    overflow: 'hidden',
-    marginLeft: '30px',
-  },
-  image: {
-    height: 'auto',
-    objectFit: 'cover',
-    position: 'absolute',
-    transition: 'opacity 1s ease-in-out',
-  },
-}));
+function LandingPage() {
+  const [showMainPage, setShowMainPage] = useState(false);
+  const navigate = useNavigate();
 
-const Portfolio = () => {
-  const classes = useStyles();
-
-  const imagePaths = [
-    "public/assets/Pic1.png",
-    "public/assets/Pic2.png",
-    "public/assets/Pic3.png",
-    "public/assets/Pic4.png"
-  ];
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const nextImage = () => {
-    if (currentImageIndex < imagePaths.length - 1) {
-      setCurrentImageIndex(currentImageIndex + 1);
-    }
+  const handleButtonClick = () => {
+    setShowMainPage(true);
+    navigate('/home');
   };
 
-  useEffect(() => {
-    if (currentImageIndex < imagePaths.length - 1) {
-      const timer = setTimeout(() => {
-        nextImage();
-      }, 2000); // Change the delay time as needed
-
-      return () => clearTimeout(timer);
-    }
-  }, [currentImageIndex, imagePaths.length]);
-
   return (
-    <div className={classes.container}>
-      {imagePaths.map((path, index) => (
-        <Slide
-          key={index}
-          direction="down"
-          in={index <= currentImageIndex}
-          timeout={1000}
-          style={{ transitionDelay: `${index * 0.5}s` }}
-          mountOnEnter
-          unmountOnExit
-        >
-          <img
-            src={path}
-            alt={`Portfolio Image ${index + 1}`}
-            className={classes.image}
-            style={{
-              left: `${index * 25}%`,
-              opacity: index <= currentImageIndex ? 1 : 0,
-            }}
-          />
-        </Slide>
-      ))}
-    </div>
+    <Container style={{ height: '100vh', overflow: 'hidden' }}>
+      <Grid container spacing={0} style={{ height: '100%' }}>
+        <Grid item xs={6} style={{ height: '100%', position: 'relative', overflow: 'hidden' }}>
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: showMainPage ? '-100%' : 0 }}
+            transition={{ duration: 0.5 }}
+            style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
+          >
+            <img
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              alt="First Half"
+              src="/public/assets/Greeting1.jpg"
+            />
+          </motion.div>
+        </Grid>
+        <Grid item xs={6} style={{ height: '100%', position: 'relative', overflow: 'hidden' }}>
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: showMainPage ? '100%' : 0 }}
+            transition={{ duration: 0.5 }}
+            style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
+          >
+            <img
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              alt="Second Half"
+              src="/public/assets/Greeting2.jpg"
+            />
+          </motion.div>
+        </Grid>
+        {showMainPage ? null : (
+          <Grid item xs={12} style={{ position: 'absolute', top: '75%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 100 }}>
+            <Button onClick={handleButtonClick} variant="contained" style={{ backgroundColor: '#f3dfd7', color: 'black' }}>
+              Click to Reveal Home
+            </Button>
+          </Grid>
+        )}
+      </Grid>
+    </Container>
   );
-};
+}
 
-export default Portfolio;
+export default LandingPage;
