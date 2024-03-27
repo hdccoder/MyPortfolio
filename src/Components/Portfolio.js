@@ -12,6 +12,9 @@ const Portfolio = () => {
   // State to track the current image index
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // State to track whether all images have dropped
+  const [imagesDropped, setImagesDropped] = useState(false);
+
   // Function to advance to the next image
   const nextImage = () => {
     if (currentImageIndex < imagePaths.length - 1) {
@@ -29,6 +32,9 @@ const Portfolio = () => {
 
       // Clear the timer when the component unmounts or when the current image index changes
       return () => clearTimeout(timer);
+    } else {
+      // If all images have dropped, set the state to indicate so
+      setImagesDropped(true);
     }
   }, [currentImageIndex, imagePaths.length]); // Depend on currentImageIndex and imagePaths.length
 
@@ -65,6 +71,15 @@ const Portfolio = () => {
       ))}
       {/* Set the width of the container to ensure Pic 4 is fully visible */}
       <div style={{ width: totalWidth }} />
+
+      {/* Render links over images if all images have dropped */}
+      {imagesDropped && (
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+          <a href="https://www.linkedin.com/in/heatherlockett/" style={{ position: 'absolute', top: '-390px', left: '-480px', zIndex: 1000 }}>Spinners</a>
+          <a href="https://www.linkedin.com/in/heatherlockett/" style={{ position: 'absolute', top: '-30px', left: '-220px', zIndex: 1000 }}>Pasline</a>
+          <a href="https://www.linkedin.com/in/heatherlockett/" style={{ position: 'absolute', top: '-420px', left: '10px', zIndex: 1000 }}>The Cake Code</a>
+        </div>
+      )}
     </div>
   );
 };
