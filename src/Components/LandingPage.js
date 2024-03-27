@@ -22,7 +22,6 @@ function LandingPage() {
           <motion.div
             initial={{ x: 0 }}
             animate={{ x: showMainPage ? '-100%' : 0 }}
-            transition={{ duration: 0.5 }}
             transition={{ duration: 1 }}
             style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
           >
@@ -37,7 +36,6 @@ function LandingPage() {
           <motion.div
             initial={{ x: 0 }}
             animate={{ x: showMainPage ? '100%' : 0 }}
-            transition={{ duration: 0.5 }}
             transition={{ duration: 1 }}
             style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
          >
