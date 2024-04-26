@@ -75,9 +75,9 @@ const Portfolio = () => {
       {/* Render links over images if all images have dropped */}
       {imagesDropped && (
    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-   <a href="https://spinners.onrender.com/" style={{ position: 'absolute', top: '-270px', left: '-580px', zIndex: 1000, textDecoration: 'none' }}>Spinners</a>
-   <a href="https://www.linkedin.com/in/heatherlockett/" style={{ position: 'absolute', top: '205px', left: '-220px', zIndex: 1000, display: 'flex', alignItems: 'center', textDecoration: 'none' }}>Pasline</a>
-   <a href="https://www.linkedin.com/in/heatherlockett/" style={{ position: 'absolute', top: '-300px', left: '10px', zIndex: 1000 ,  display: 'inline', textDecoration: 'none' }}>
+   <a href="https://spinners.onrender.com/" style={{ position: 'absolute', top: '-245px', left: '-650px', zIndex: 1000, textDecoration: 'none' , fontSize: '25px'}}>Spinners</a>
+   <a href="https://www.linkedin.com/in/heatherlockett/" style={{ position: 'absolute', top: '255px', left: '-302px', zIndex: 1000, display: 'flex', alignItems: 'center', textDecoration: 'none',fontSize: '25px' }}>Pasline</a>
+   <a href="https://thecakecode.onrender.com/" style={{ position: 'absolute', top: '-264px', left: '10px', zIndex: 1000 ,  display: 'inline', textDecoration: 'none',fontSize: '25px' }}>
      <span>The</span>
      <span style={{ marginLeft: '5px', marginRight: '5px' }}>Cake</span>
      <span>Code</span>

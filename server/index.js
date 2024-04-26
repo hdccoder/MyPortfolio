@@ -11,7 +11,7 @@ const init = async()=> {
 
   console.log('do seed and sync here for database');
 
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3010;
   app.listen(port, ()=> {
     console.log(`listening on port ${port}`)
   });
